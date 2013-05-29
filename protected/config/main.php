@@ -9,7 +9,6 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Daniel Krochmalny',
 	'theme'=>'bootstrap',
-
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -18,7 +17,6 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		'gii'=>array(
@@ -33,6 +31,14 @@ return array(
 	),
 	// application components
 	'components'=>array(
+		'clientScript'=>array(
+			'packages'=>array(
+				'jquery'=>array(
+					'baseUrl'=>'//ajax.googleapis.com/ajax/libs/jquery/1/',
+					'js'=>array('jquery.min.js'),
+				),
+			),
+		),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -40,6 +46,13 @@ return array(
 		'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
         ),
+		'less'=>array(
+			'class'=>'ext.less.components.Less',
+			'mode'=>'client',
+			'files'=>array(
+				'less/styles.less'=>'css/styles.css',
+			),		
+		),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
